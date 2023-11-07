@@ -31,7 +31,7 @@ public class OrderMain {
 			
 			CSV csv = new CSV();
 			csv.CSVRead(fileName);
-			List<Person> ps20 = csv.GetList20(); //20時参加者リスト
+			List<Person> ps20 = csv.GetList20(); //20時参加者teリスト
 			List<Person> ps = csv.GetList();//17時参加者リスト
 			List<String> info = csv.GetInfo("A");//特記事項(A)リスト
 			String now = new Timestamp(System.currentTimeMillis()).toString();//取得時間
