@@ -25,20 +25,23 @@ public class CSV {
 				
 				Person p = new Person(name,team,time);
 				int index = data.length;
-				if(index == 14) {
-					String temp = name + ":" + data[13];
-					if(team.equals("A"))
-						infoA.add(temp);
-					if(team.equals("B"))
-						infoB.add(temp);
-					index =13;
-				}
+				if(index > 13) {
+					if(!data[13].equals("")) {
+						String temp = name + ":" + data[13];
+						if(team.equals("A"))
+							infoA.add(temp);
+						if(team.equals("B"))
+							infoB.add(temp);
+					}
+					
+				}				
 				for(int j = 5; j < index; j++) {
+					if(j == 12) break;
 					if(data[j].equals("")) {
 						classNum++;
 						continue;
 					}
-					p.SetClass(Classes[classNum], 0);
+					p.SetClass(Classes[classNum], data[j+9]);
 					p.SetArky(Classes[classNum], data[j]);
 					classNum++;	
 				}
