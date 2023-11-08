@@ -36,7 +36,7 @@ public class CSV {
 					
 				}				
 				for(int j = 5; j < index; j++) {
-					if(j == 12) break;
+					if(j == 13) break;
 					if(data[j].equals("")) {
 						classNum++;
 						continue;
